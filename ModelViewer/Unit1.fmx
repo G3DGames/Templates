@@ -1,0 +1,190 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Gorilla3D - Model Viewer'
+  ClientHeight = 640
+  ClientWidth = 960
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object ToolBar1: TToolBar
+    Size.Width = 960.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object BtnOpen: TButton
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 6.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 4.000000000000000000
+      Position.Y = 6.000000000000000000
+      Size.Width = 90.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Open ...'
+      OnClick = BtnOpenClick
+    end
+    object BtnFit: TButton
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 6.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 102.000000000000000000
+      Position.Y = 6.000000000000000000
+      Size.Width = 60.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Fit'
+      OnClick = BtnFitClick
+    end
+    object LblNavigation: TLabel
+      Align = Left
+      Margins.Left = 16.000000000000000000
+      Position.X = 178.000000000000000000
+      Size.Width = 72.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Navigation'
+      TabOrder = 2
+    end
+    object CmbNavProfile: TComboBox
+      Align = Left
+      Margins.Left = 8.000000000000000000
+      Margins.Top = 6.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 258.000000000000000000
+      Position.Y = 6.000000000000000000
+      Size.Width = 140.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      OnChange = CmbNavProfileChange
+      Items.Strings = (
+        'Default'
+        'Orbit'
+        'Inverse Orbit'
+        'Blender'
+        'Sketchfab')
+      ItemIndex = 0
+    end
+    object ChkRotate: TCheckBox
+      Align = Left
+      IsChecked = True
+      Margins.Left = 16.000000000000000000
+      Position.X = 414.000000000000000000
+      Size.Width = 70.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Rotate'
+      OnChange = ChkNavigationChange
+    end
+    object ChkZoom: TCheckBox
+      Align = Left
+      IsChecked = True
+      Margins.Left = 8.000000000000000000
+      Position.X = 492.000000000000000000
+      Size.Width = 64.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'Zoom'
+      OnChange = ChkNavigationChange
+    end
+    object ChkShift: TCheckBox
+      Align = Left
+      IsChecked = True
+      Margins.Left = 8.000000000000000000
+      Position.X = 564.000000000000000000
+      Size.Width = 64.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Text = 'Pan'
+      OnChange = ChkNavigationChange
+    end
+  end
+  object ToolBar2: TToolBar
+    Position.Y = 44.000000000000000000
+    Size.Width = 960.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object LblAnimation: TLabel
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Size.Width = 72.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Animation'
+      TabOrder = 0
+    end
+    object CmbAnimation: TComboBox
+      Align = Left
+      Enabled = False
+      Margins.Left = 8.000000000000000000
+      Margins.Top = 6.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 84.000000000000000000
+      Position.Y = 6.000000000000000000
+      Size.Width = 240.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      OnChange = CmbAnimationChange
+    end
+    object ChkBlending: TCheckBox
+      Align = Left
+      Enabled = False
+      IsChecked = True
+      Margins.Left = 16.000000000000000000
+      Position.X = 340.000000000000000000
+      Size.Width = 90.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Blending'
+      OnChange = ChkBlendingChange
+    end
+  end
+  object LblStatus: TLabel
+    Align = Bottom
+    StyledSettings = [Family, Style, FontColor]
+    Margins.Left = 8.000000000000000000
+    Margins.Right = 8.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 616.000000000000000000
+    Size.Width = 944.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 13.000000000000000000
+    Text = 'Drop a model file here'
+    TabOrder = 1
+  end
+  object GorillaViewport1: TGorillaViewport
+    Align = Client
+    Color = claBlack
+    Position.Y = 88.000000000000000000
+    Size.Width = 960.000000000000000000
+    Size.Height = 528.000000000000000000
+    Size.PlatformDefault = False
+    OnDragDrop = GorillaViewport1DragDrop
+    OnDragOver = GorillaViewport1DragOver
+    object GorillaLight1: TGorillaLight
+      Color = claWhite
+      LightType = Directional
+      Width = 1.000000000000000000
+      Height = 1.000000000000000000
+      Depth = 1.000000000000000000
+      Intensity = 1.000000000000000000
+    end
+  end
+end

@@ -1,0 +1,169 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Gorilla3D - Physics Character Scene'
+  ClientHeight = 600
+  ClientWidth = 800
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object GorillaViewport1: TGorillaViewport
+    Align = Client
+    Camera = GorillaCamera1
+    Color = claDarkslategray
+    FarPlane = 1000.000000000000000000
+    Size.Width = 800.000000000000000000
+    Size.Height = 600.000000000000000000
+    Size.PlatformDefault = False
+    UsingDesignCamera = False
+    object GorillaLight1: TGorillaLight
+      Color = claWhite
+      LightType = Directional
+      Position.Y = -40.000000000000000000
+      Position.Z = -40.000000000000000000
+      RotationAngle.X = -45.000000000000000000
+      Width = 1.000000000000000000
+      Height = 1.000000000000000000
+      Depth = 1.000000000000000000
+      Intensity = 1.000000000000000000
+    end
+    object GorillaTerrain1: TGorillaTerrain
+      Width = 120.000000000000000000
+      Height = 8.000000000000000000
+      Depth = 120.000000000000000000
+      Opaque = True
+      FrustumCullingCheck = True
+      ShowNormals = False
+      Wireframe = False
+      Shadows = True
+      Instances = <>
+      WrapMode = Original
+      MaterialSource = GorillaTerrainMaterial
+      TwoFace = False
+      ResolutionX = 128
+      ResolutionY = 128
+      object GorillaTerrainMaterial: TGorillaBlinnMaterialSource
+        Diffuse = claDarkolivegreen
+        UseTexture0 = False
+      end
+    end
+    object GorillaPhysicsSystem1: TGorillaPhysicsSystem
+      Width = 200.000000000000000000
+      Height = 200.000000000000000000
+      Depth = 200.000000000000000000
+      Opaque = True
+      Driver = Q3Physics
+      Active = False
+      Async = True
+      RenderColliders = False
+      Accuracy = 10
+      Colliders = <
+        item
+          DisplayName = 'TerrainCollider'
+          Control = GorillaTerrain1
+          Kind = ckTerrain
+          BodyType = eStaticBody
+          LockRotAxisX = False
+          LockRotAxisY = False
+          LockRotAxisZ = False
+          LockMoveAxisX = False
+          LockMoveAxisY = False
+          LockMoveAxisZ = False
+          LinearDamping = 0.500000000000000000
+          AngularDamping = 0.200000002980232200
+          Layers = 1
+          AllowSleep = True
+          Active = True
+          Friction = 0.400000005960464500
+          Restitution = 0.200000002980232200
+          Density = 1.000000000000000000
+          Sensor = False
+          AllowSubColliders = False
+        end>
+      Joints = <>
+    end
+    object GorillaPhysicsCharacterController1: TGorillaPhysicsCharacterController
+      Position.Y = -10.000000000000000000
+      Width = 1.250000000000000000
+      Height = 1.750000000000000000
+      Depth = 1.250000000000000000
+      Model = GorillaModel1
+      Controller = GorillaThirdPersonController1
+      Physics = GorillaPhysicsSystem1
+      AutoRotateModel = True
+      UseRayCasting = True
+      Slop = 1.000000000000000000
+      RayOffset = 100.000000000000000000
+      GroundSmoothingFactor = 0.879999995231628400
+      PositionTolerance = 0.004999999888241291
+      UpdateTime = 0.019999999552965160
+      GravityScale = 4.000000000000000000
+      object GorillaThirdPersonController1: TGorillaThirdPersonController
+        Width = 1.000000000000000000
+        Height = 1.750000000000000000
+        Depth = 1.000000000000000000
+        Camera = GorillaCamera1
+        InputController = GorillaInputController1
+        LockXAxis = False
+        LockYAxis = True
+        LockZAxis = False
+        MoveSideways = False
+        RotateOnSideways = True
+        Speed = 20.000000000000000000
+        SidewayRotationSpeed = 0.250000000000000000
+        CharacterHeight = 1.750000000000000000
+        CurrentCharacterHeight = 1.750000000000000000
+        JumpingHeight = 2.000000000000000000
+        CrouchingHeight = 0.750000000000000000
+        CrawlingHeight = 0.400000005960464500
+        MouseControllerSpeed = 0.075000002980232240
+        GamePadThumbstickSpeed = 0.500000000000000000
+        ShowCursor = True
+        UseDefaultBehaviour = True
+        UseDefaultMovement = False
+        MouseWheelSpeed = 1.000000000000000000
+        object GorillaCamera1: TGorillaCamera
+          AngleOfView = 60.000000000000000000
+          Position.Y = -2.500000000000000000
+          Position.Z = -6.000000000000000000
+          Width = 1.000000000000000000
+          Height = 1.000000000000000000
+          Depth = 1.000000000000000000
+          FOV = 60.000000000000000000
+        end
+      end
+      object GorillaModel1: TGorillaModel
+        QualifiedName = 'CharacterModel'
+        Width = 1.000000000000000000
+        Height = 1.750000000000000000
+        Depth = 1.000000000000000000
+        Opaque = True
+        FrustumCullingCheck = True
+        ShowNormals = False
+        Wireframe = False
+        Shadows = True
+        Instances = <>
+        WrapMode = Original
+        object GorillaCapsule1: TGorillaCapsule
+          Width = 1.000000000000000000
+          Height = 1.750000000000000000
+          Depth = 1.000000000000000000
+          MaterialSource = GorillaCharacterMaterial
+          object GorillaCharacterMaterial: TGorillaBlinnMaterialSource
+            Diffuse = claCornflowerblue
+            UseTexture0 = False
+          end
+        end
+      end
+    end
+  end
+  object GorillaInputController1: TGorillaInputController
+    Enabled = False
+    Supported = [Keyboard, Mouse, GamePad]
+    HighPerformanceHooks = False
+  end
+end

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TemplateLibrary Version="1.0" id="de.gorilla3d.templates">
+  <Name>Gorilla3D</Name>
+  <Description>Gorilla3D project templates for Delphi FireMonkey</Description>
+  <Items>
+    <Item id="de.gorilla3d.templates.blank" Creator="DelphiProjectRepositoryCreator">
+      <Name>Gorilla3D Blank Project</Name>
+      <Description>A minimal Gorilla3D scene: viewport, camera, directional light and a cube with a Blinn material.</Description>
+      <Author>Gorilla3D</Author>
+      <Icon>Icons\Gorilla3D.ico</Icon>
+      <ProjectFile>GorillaBlank.dproj</ProjectFile>
+      <DefaultProjectName>GorillaBlank</DefaultProjectName>
+      <FilePath>Blank</FilePath>
+      <Categories>
+        <Category Value="Gorilla3D.Templates" Parent="Borland.Delphi.New">Gorilla3D</Category>
+        <Category Value="Borland.Delphi.New" Parent="Borland.Root">Delphi Projects</Category>
+      </Categories>
+      <Identities>RadStudio</Identities>
+    </Item>
+    <Item id="de.gorilla3d.templates.firstperson" Creator="DelphiProjectRepositoryCreator">
+      <Name>Gorilla3D First Person Scene</Name>
+      <Description>A walkable first person scene: viewport, light, input controller and a camera driven by a TGorillaFirstPersonController.</Description>
+      <Author>Gorilla3D</Author>
+      <Icon>Icons\Gorilla3D.ico</Icon>
+      <ProjectFile>GorillaFirstPerson.dproj</ProjectFile>
+      <DefaultProjectName>GorillaFirstPerson</DefaultProjectName>
+      <FilePath>FirstPerson</FilePath>
+      <Categories>
+        <Category Value="Gorilla3D.Templates" Parent="Borland.Delphi.New">Gorilla3D</Category>
+        <Category Value="Borland.Delphi.New" Parent="Borland.Root">Delphi Projects</Category>
+      </Categories>
+      <Identities>RadStudio</Identities>
+    </Item>
+    <Item id="de.gorilla3d.templates.thirdperson" Creator="DelphiProjectRepositoryCreator">
+      <Name>Gorilla3D Third Person Scene</Name>
+      <Description>A third person scene: viewport, light, input controller, a capsule as character body and a chase camera driven by a TGorillaThirdPersonController.</Description>
+      <Author>Gorilla3D</Author>
+      <Icon>Icons\Gorilla3D.ico</Icon>
+      <ProjectFile>GorillaThirdPerson.dproj</ProjectFile>
+      <DefaultProjectName>GorillaThirdPerson</DefaultProjectName>
+      <FilePath>ThirdPerson</FilePath>
+      <Categories>
+        <Category Value="Gorilla3D.Templates" Parent="Borland.Delphi.New">Gorilla3D</Category>
+        <Category Value="Borland.Delphi.New" Parent="Borland.Root">Delphi Projects</Category>
+      </Categories>
+      <Identities>RadStudio</Identities>
+    </Item>
+    <Item id="de.gorilla3d.templates.physics" Creator="DelphiProjectRepositoryCreator">
+      <Name>Gorilla3D Physics Character Scene</Name>
+      <Description>A third person character on a procedurally generated terrain, driven by the Q3 physics backend: physics system with a terrain collider, input controller, physics character controller, third person controller, model and chase camera.</Description>
+      <Author>Gorilla3D</Author>
+      <Icon>Icons\Gorilla3D.ico</Icon>
+      <ProjectFile>GorillaPhysicsCharacter.dproj</ProjectFile>
+      <DefaultProjectName>GorillaPhysicsCharacter</DefaultProjectName>
+      <FilePath>PhysicsCharacter</FilePath>
+      <Categories>
+        <Category Value="Gorilla3D.Templates" Parent="Borland.Delphi.New">Gorilla3D</Category>
+        <Category Value="Borland.Delphi.New" Parent="Borland.Root">Delphi Projects</Category>
+      </Categories>
+      <Identities>RadStudio</Identities>
+    </Item>
+    <Item id="de.gorilla3d.templates.modelviewer" Creator="DelphiProjectRepositoryCreator">
+      <Name>Gorilla3D Model Viewer</Name>
+      <Description>Drop a 3D model file onto the viewport and inspect it with the built-in design camera - navigation profile and allowed navigation types switchable at runtime.</Description>
+      <Author>Gorilla3D</Author>
+      <Icon>Icons\Gorilla3D.ico</Icon>
+      <ProjectFile>GorillaModelViewer.dproj</ProjectFile>
+      <DefaultProjectName>GorillaModelViewer</DefaultProjectName>
+      <FilePath>ModelViewer</FilePath>
+      <Categories>
+        <Category Value="Gorilla3D.Templates" Parent="Borland.Delphi.New">Gorilla3D</Category>
+        <Category Value="Borland.Delphi.New" Parent="Borland.Root">Delphi Projects</Category>
+      </Categories>
+      <Identities>RadStudio</Identities>
+    </Item>
+    <Item id="de.gorilla3d.templates.volumerendering" Creator="DelphiProjectRepositoryCreator">
+      <Name>Gorilla3D Volume Rendering</Name>
+      <Description>Direct volume rendering with TGorillaVolumetricMesh: the two front/back face pre passes that feed the ray caster, plus example code that generates and uploads its own 3D data.</Description>
+      <Author>Gorilla3D</Author>
+      <Icon>Icons\Gorilla3D.ico</Icon>
+      <ProjectFile>GorillaVolumeRendering.dproj</ProjectFile>
+      <DefaultProjectName>GorillaVolumeRendering</DefaultProjectName>
+      <FilePath>VolumeRendering</FilePath>
+      <Categories>
+        <Category Value="Gorilla3D.Templates" Parent="Borland.Delphi.New">Gorilla3D</Category>
+        <Category Value="Borland.Delphi.New" Parent="Borland.Root">Delphi Projects</Category>
+      </Categories>
+      <Identities>RadStudio</Identities>
+    </Item>
+  </Items>
+</TemplateLibrary>

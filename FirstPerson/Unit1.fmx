@@ -1,0 +1,115 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Gorilla3D - First Person Scene'
+  ClientHeight = 600
+  ClientWidth = 800
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnClose = FormClose
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object GorillaViewport1: TGorillaViewport
+    Align = Client
+    Camera = GorillaCamera1
+    Color = claDarkslategray
+    Size.Width = 800.000000000000000000
+    Size.Height = 600.000000000000000000
+    Size.PlatformDefault = False
+    UsingDesignCamera = False
+    object GorillaLight1: TGorillaLight
+      Color = claWhite
+      LightType = Directional
+      Position.Y = -20.000000000000000000
+      Position.Z = -20.000000000000000000
+      RotationAngle.X = -45.000000000000000000
+      Width = 1.000000000000000000
+      Height = 1.000000000000000000
+      Depth = 1.000000000000000000
+      Intensity = 1.000000000000000000
+    end
+    object GorillaPlane1: TGorillaPlane
+      RotationAngle.X = 90.000000000000000000
+      Width = 60.000000000000000000
+      Height = 60.000000000000000000
+      Depth = 1.000000000000000000
+      TwoSide = True
+      MaterialSource = GorillaGroundMaterial
+      SubdivisionsHeight = 16
+      SubdivisionsWidth = 16
+      object GorillaGroundMaterial: TGorillaBlinnMaterialSource
+        Diffuse = claDimgray
+        UseTexture0 = False
+      end
+    end
+    object GorillaCube1: TGorillaCube
+      Position.X = -6.000000000000000000
+      Position.Y = -1.000000000000000000
+      Position.Z = 8.000000000000000000
+      Width = 2.000000000000000000
+      Height = 2.000000000000000000
+      Depth = 2.000000000000000000
+      MaterialSource = GorillaCubeMaterial
+      object GorillaCubeMaterial: TGorillaBlinnMaterialSource
+        Diffuse = claOrange
+        UseTexture0 = False
+      end
+    end
+    object GorillaCube2: TGorillaCube
+      Position.X = 7.000000000000000000
+      Position.Y = -1.500000000000000000
+      Position.Z = 12.000000000000000000
+      Width = 3.000000000000000000
+      Height = 3.000000000000000000
+      Depth = 3.000000000000000000
+      MaterialSource = GorillaCubeMaterial
+    end
+    object GorillaCube3: TGorillaCube
+      Position.Y = -0.750000000000000000
+      Position.Z = 18.000000000000000000
+      Width = 1.500000000000000000
+      Height = 1.500000000000000000
+      Depth = 1.500000000000000000
+      MaterialSource = GorillaCubeMaterial
+    end
+    object GorillaFirstPersonController1: TGorillaFirstPersonController
+      Width = 1.000000000000000000
+      Height = 1.750000000000000000
+      Depth = 1.000000000000000000
+      Camera = GorillaCamera1
+      InputController = GorillaInputController1
+      LockXAxis = False
+      LockYAxis = True
+      LockZAxis = False
+      MoveSideways = False
+      RotateOnSideways = True
+      Speed = 0.250000000000000000
+      SidewayRotationSpeed = 0.250000000000000000
+      CharacterHeight = 1.750000000000000000
+      CurrentCharacterHeight = 1.750000000000000000
+      JumpingHeight = 2.000000000000000000
+      CrouchingHeight = 0.750000000000000000
+      CrawlingHeight = 0.400000005960464500
+      MouseControllerSpeed = 0.075000002980232240
+      GamePadThumbstickSpeed = 0.500000000000000000
+      ShowCursor = True
+      UseCameraDirection = True
+      UseDefaultBehaviour = True
+      UseDefaultMovement = True
+      object GorillaCamera1: TGorillaCamera
+        AngleOfView = 60.000000000000000000
+        Position.Y = -1.750000000000000000
+        Width = 1.000000000000000000
+        Height = 1.000000000000000000
+        Depth = 1.000000000000000000
+        FOV = 60.000000000000000000
+      end
+    end
+  end
+  object GorillaInputController1: TGorillaInputController
+    Enabled = False
+    Supported = [Keyboard, Mouse, GamePad]
+    HighPerformanceHooks = False
+  end
+end

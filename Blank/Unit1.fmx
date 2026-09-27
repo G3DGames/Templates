@@ -1,0 +1,42 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Gorilla3D - Blank Project'
+  ClientHeight = 600
+  ClientWidth = 800
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object GorillaViewport1: TGorillaViewport
+    Align = Client
+    Color = claBlack
+    Size.Width = 800.000000000000000000
+    Size.Height = 600.000000000000000000
+    Size.PlatformDefault = False
+    object GorillaLight1: TGorillaLight
+      Color = claWhite
+      LightType = Directional
+      Position.Y = -10.000000000000000000
+      Position.Z = -10.000000000000000000
+      RotationAngle.X = -35.000000000000000000
+      Width = 1.000000000000000000
+      Height = 1.000000000000000000
+      Depth = 1.000000000000000000
+      Intensity = 1.000000000000000000
+    end
+    object GorillaCube1: TGorillaCube
+      Width = 2.000000000000000000
+      Height = 2.000000000000000000
+      Depth = 2.000000000000000000
+      RotationAngle.X = -20.000000000000000000
+      RotationAngle.Y = 35.000000000000000000
+      MaterialSource = GorillaBlinnMaterialSource1
+      object GorillaBlinnMaterialSource1: TGorillaBlinnMaterialSource
+        Diffuse = claOrange
+        UseTexture0 = False
+      end
+    end
+  end
+end

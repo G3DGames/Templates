@@ -1,0 +1,117 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Gorilla3D - Volume Rendering'
+  ClientHeight = 640
+  ClientWidth = 960
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object ToolBar1: TToolBar
+    Size.Width = 960.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object LblDataSet: TLabel
+      Align = Left
+      Margins.Left = 8.000000000000000000
+      Position.X = 8.000000000000000000
+      Size.Width = 60.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Data set'
+      TabOrder = 0
+    end
+    object CmbDataSet: TComboBox
+      Align = Left
+      Margins.Left = 8.000000000000000000
+      Margins.Top = 6.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 76.000000000000000000
+      Position.Y = 6.000000000000000000
+      Size.Width = 150.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      OnChange = CmbDataSetChange
+      Items.Strings = (
+        'Solid ball'
+        'Hollow shell'
+        'Gyroid')
+      ItemIndex = 0
+    end
+    object LblDetails: TLabel
+      Align = Left
+      Margins.Left = 16.000000000000000000
+      Position.X = 242.000000000000000000
+      Size.Width = 54.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Details'
+      TabOrder = 2
+    end
+    object TrkDetails: TTrackBar
+      Align = Left
+      Margins.Left = 8.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Max = 4.000000000000000000
+      Min = 1.000000000000000000
+      Value = 2.000000000000000000
+      Orientation = Horizontal
+      Position.X = 304.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 160.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      OnChange = TrkDetailsChange
+    end
+    object ChkDithering: TCheckBox
+      Align = Left
+      IsChecked = True
+      Margins.Left = 16.000000000000000000
+      Position.X = 480.000000000000000000
+      Size.Width = 90.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Dithering'
+      OnChange = ChkDitheringChange
+    end
+  end
+  object LblStatus: TLabel
+    Align = Bottom
+    StyledSettings = [Family, Style, FontColor]
+    Margins.Left = 8.000000000000000000
+    Margins.Right = 8.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 616.000000000000000000
+    Size.Width = 944.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 13.000000000000000000
+    Text = 'Volume'
+    TabOrder = 1
+  end
+  object GorillaViewport1: TGorillaViewport
+    Align = Client
+    Color = claBlack
+    Position.Y = 44.000000000000000000
+    Size.Width = 960.000000000000000000
+    Size.Height = 572.000000000000000000
+    Size.PlatformDefault = False
+    object GorillaLight1: TGorillaLight
+      Color = claWhite
+      LightType = Directional
+      Width = 1.000000000000000000
+      Height = 1.000000000000000000
+      Depth = 1.000000000000000000
+      Intensity = 1.000000000000000000
+    end
+  end
+end
